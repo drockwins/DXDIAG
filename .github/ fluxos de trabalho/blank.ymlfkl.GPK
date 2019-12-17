@@ -1,0 +1,94 @@
+name: CI
+
+on: [push]
+
+# include  < sys / stat.h >
+bool  NvAssetGetFilePath ( const std :: string fileName, std :: string & path) {
+	ARQUIVO * fp = NULL ;
+	// loop N aumenta a hierarquia, testando em cada nível
+	std :: string upPath;
+	std :: string fullPath;
+	for ( int32_t i = 0 ; i < 10 ; i ++) {
+		std :: vector <std :: string> :: iterator src = s_searchPath. begin ();
+		loop bool = true ;
+		while (em loop) {
+			caminho completo. atribuir (upPath);  // redefine para upPath atual.
+			if (src! = s_searchPath. end ()) {
+				// sprintf_s (fullPath, "% s% s / recursos /% s", upPath, * src, filePath);
+				caminho completo. acrescentar (* src);
+				caminho completo. acrescentar ( " / assets / " );
+				src ++;
+			}
+			mais {
+				// sprintf_s (fullPath, "% sassets /% s", upPath, filePath);
+				caminho completo. acrescentar ( " ativos / " );
+				loop = false ;
+			}
+			caminho completo. acrescentar (nome do arquivo);
+
+# ifdef DEBUG
+			fprintf (stderr, " Tentando abrir% s \ n " , caminho completo. c_str ());
+# endif
+			if (fileName. empty ()) {
+                struct  stat buf;
+                if ( stat (caminho completo. c_str (), & buf) == 0 ) {
+					path = fullPath;
+					return  true ;conjunto (glsl2spirv $ {CMAKE_SOURCE_DIR} / BuildTools / spir-v / bin / glsl2spirv)
+arquivo ( GLOB GLSLC_SOURCE_FILES "src_shaders / *. glslc" )
+
+foreach (GLSLC $ {GLSLC_SOURCE_FILES} )
+  get_filename_component (FILE_NAME $ {GLSLC} NAME_WE)
+  mensagem ( "GLSLC: $ {GLSLC} " )
+  add_custom_command (
+    Shaders de SAÍDA / $ {FILE_NAME} .h shaders / $ {FILE_NAME} .cpp
+    COMMAND mkdir -p shaders
+    COMANDO  $ {glsl2spirv} -cpp $ {FILE_NAME} shaders -o / $ {FILE_NAME}  $ {GLSLC}BuildTools/spir-v/lib/linux-arm32/libshaderc_combined.a
+BuildTools/spir-v/lib/linux64/libshaderc_combined.a
+extensions/build/linux-aarch64/Makefile.NvVkUtil.mk
+extensions/build/linux64/Makefile
+extensions/build/linux64/Makefile.NsFoundation.mk
+extensions/build/linux64/Makefile.NvAppBase.mk
+extensions/build/linux64/Makefile.NvAssetLoader.mk
+extensions/build/linux64/Makefile.NvEGLUtil.mk
+extensions/build/makeandroid/Makefile.NvEGLUtil.mk
+extensions/build/makeandroid/Makefile.NvGLUtils.mk
+extensions/build/makeandroid/Makefile.NvGamepad.mk
+extensions/build/makeandroid/Makefile.NvImage.mk
+extensions/build/makeandroid/Makefile.NvModel.mk
+extensions/build/makeandroid/Makefile.NvUI.mk
+    DEPENDE  $ {GLSLC}
+  )
+  mensagem ( "GLSLC: $ {GLSLC} , shaders / $ {FILE_NAME} .h, shaders / $ {FILE_NAME} .cpp" )
+net.framework> adfjfjgiw~´ gwergwri~hjgt aweanweig nfhaowier tijfnmaeo commandTokenLayouts [ 0 ]. tokenType = VK_INDIRECT_COMMANDS_TOKEN_DRAW_INDEXED_NVX ;
+			commandTokenLayouts [ 0 ]. tokenType = VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NVX ;
+			commandTokenLayouts [ 0 ]. divisor = 1 ;
+			commandTokenLayouts [ 0 ]. bindingUnit   = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_DRAW_INDEXED_NVX * /
+			commandTokenLayouts [ 0 ]. dynamicCount = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_DRAW_INDEXED_NVX * /
+			commandTokenLayouts [ 0 ]. bindingUnit   = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NVX * /
+			commandTokenLayouts [ 0 ]. dynamicCount = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NVX * /
+
+			commandLayoutInfo. pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+			commandLayoutInfo. pTokens = commandTokenLayouts;
+@@ -488,15 +488,15 @@ void BasicDeviceGeneratedCommandsVk :: initRendering (void) {
+
+			VkIndirectCommandsLayoutTokenNVX commandTokenLayouts [ 2 ];
+
+			commandTokenLayouts [ 0 ]. tokenType = VK_INDIRECT_COMMANDS_TOKEN_PIPELINE_NVX ;
+			commandTokenLayouts [ 0 ]. tokenType = VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NVX ;
+			commandTokenLayouts [ 0 ]. divisor = 1 ;
+			commandTokenLayouts [ 0 ]. bindingUnit = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_PIPELINE_NVX * /
+			commandTokenLayouts [ 0 ]. dynamicCount = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_PIPELINE_NVX * /
+			commandTokenLayouts [ 0 ]. bindingUnit = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NVX * /
+			commandTokenLayouts [ 0 ]. dynamicCount = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NVX * /
+
+			commandTokenLayouts [ 1 ]. tokenType = VK_INDIRECT_COMMANDS_TOKEN_DRAW_INDEXED_NVX ;
+			commandTokenLayouts [ 1 ]. tokenType = VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NVX ;
+			commandTokenLayouts [ 1 ]. divisor = 1 ;
+			commandTokenLayouts [ 1 ]. bindingUnit = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_DRAW_INDEXED_NVX * /
+			commandTokenLayouts [ 1 ]. dynamicCount = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_DRAW_INDEXED_NVX * /
+			commandTokenLayouts [ 1 ]. bindingUnit = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NVX * /
+			commandTokenLayouts [ 1 ]. dynamicCount = 0 ; / * não utilizado para VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NVX * /
+
+			commandLayoutInfo. pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+			commandLayoutInfo. pTokens = commandTokenLayouts;
+@@ -511,25 +511,25 @@ void BasicDeviceGeneratedCommandsVk :: initRendering (void) {r
